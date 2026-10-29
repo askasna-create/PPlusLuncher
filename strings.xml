@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">P+ Launcher</string>
+    <string name="battery">BATERI</string>
+    <string name="storage">STORAN</string>
+    <string name="charging">Mengecas</string>
+    <string name="full">Penuh</string>
+    <string name="storage_sub">%1$s kosong / %2$s</string>
+    <string name="next_prayer">%1$s dalam %2$s</string>
+    <string name="apps_hint">︿   Leret ke atas untuk aplikasi</string>
+    <string name="search_hint">Cari aplikasi…</string>
+    <string name="hint_location">Tekan lama untuk tukar lokasi</string>
+    <string name="location_title">Lokasi waktu solat</string>
+    <string name="place">Nama tempat</string>
+    <string name="latitude">Latitud (cth: 3.4508)</string>
+    <string name="longitude">Longitud (cth: 102.4196)</string>
+    <string name="save">Simpan</string>
+    <string name="cancel">Batal</string>
+    <string name="invalid_coords">Koordinat tidak sah</string>
+</resources>

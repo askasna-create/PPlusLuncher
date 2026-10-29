@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- ===================== HOME ===================== -->
+    <LinearLayout
+        android:id="@+id/home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="40dp"
+        android:paddingBottom="4dp">
+
+        <TextClock
+            android:id="@+id/clock"
+            style="@style/Shadowed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-thin"
+            android:format12Hour="h:mm"
+            android:format24Hour="HH:mm"
+            android:includeFontPadding="false"
+            android:textColor="@color/fg"
+            android:textSize="76sp" />
+
+        <TextClock
+            android:id="@+id/date"
+            style="@style/Shadowed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:format12Hour="EEEE, d MMMM"
+            android:format24Hour="EEEE, d MMMM"
+            android:textColor="@color/fg"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/hijri"
+            style="@style/Shadowed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:textColor="@color/dim"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!-- Waktu solat -->
+        <LinearLayout
+            android:id="@+id/prayer_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/prayer_place"
+                    style="@style/Label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/prayer_next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/accent"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/prayer_row"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal" />
+        </LinearLayout>
+
+        <!-- Bateri + Storan -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/battery_card"
+                style="@style/StatCard"
+                android:layout_marginEnd="5dp">
+
+                <TextView style="@style/Label" android:text="@string/battery" />
+                <TextView android:id="@+id/battery_text" style="@style/StatValue" />
+                <ProgressBar android:id="@+id/battery_bar" style="@style/Bar" />
+                <TextView android:id="@+id/battery_sub" style="@style/StatSub" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/storage_card"
+                style="@style/StatCard"
+                android:layout_marginStart="5dp">
+
+                <TextView style="@style/Label" android:text="@string/storage" />
+                <TextView android:id="@+id/storage_text" style="@style/StatValue" />
+                <ProgressBar android:id="@+id/storage_bar" style="@style/Bar" />
+                <TextView android:id="@+id/storage_sub" style="@style/StatSub" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/apps_hint"
+            style="@style/Shadowed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
+            android:text="@string/apps_hint"
+            android:textColor="@color/dim"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <!-- ===================== APP DRAWER ===================== -->
+    <LinearLayout
+        android:id="@+id/drawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/drawer_bg"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="vertical"
+        android:paddingStart="16dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="16dp"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/search_bg"
+            android:hint="@string/search_hint"
+            android:imeOptions="actionGo|flagNoExtractUi"
+            android:importantForAutofill="no"
+            android:inputType="text|textNoSuggestions"
+            android:paddingStart="18dp"
+            android:paddingTop="13dp"
+            android:paddingEnd="18dp"
+            android:paddingBottom="13dp"
+            android:singleLine="true"
+            android:textColor="@color/fg"
+            android:textColorHint="@color/dim"
+            android:textCursorDrawable="@null"
+            android:textSize="16sp" />
+
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:divider="@null"
+            android:fastScrollEnabled="true"
+            android:paddingBottom="8dp"
+            android:scrollbars="none" />
+    </LinearLayout>
+</FrameLayout>
